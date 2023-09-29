@@ -8,7 +8,7 @@ person1 = { name : "Bob", age : 25 }
 person2 = { name : "James", age : 25 }
 person3 = { name : "Bob", age : 30 }
 
-sorter = Sort.and (Sort.by .name Sort.string) (Sort.by .age Sort.int)
+sorter = Sort.by .name Sort.string |> Sort.and (Sort.by .age Sort.int)
 
 Sort.order sorter person1 person2
 -- LT
