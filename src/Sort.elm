@@ -2,7 +2,7 @@ module Sort exposing (Sorter, all, and, by, custom, equal, float, int, list, ord
 
 {-| Useful ways to combine sorters.
 
-@doc Sorter, all, and, by, custom, equal, float, int, list, order, reverse, string
+@docs Sorter, all, and, by, custom, equal, float, int, list, order, reverse, string
 
 -}
 
