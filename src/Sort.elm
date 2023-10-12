@@ -51,7 +51,7 @@ equal_ _ _ =
     EQ
 
 
-{-| Combine sorters, defering to the second sorter.
+{-| Combine sorters, deferring to the second sorter.
 -}
 and : Sorter a -> Sorter a -> Sorter a
 and (Sorter fallback) (Sorter sorter) =
@@ -113,7 +113,12 @@ reverse_ sorter left right =
 -}
 all : List (Sorter a) -> Sorter a
 all sorters =
-    List.foldr and equal sorters
+    case sorters of
+        [] ->
+            equal
+
+        h :: r ->
+            List.foldl and h r
 
 
 {-| Order a list with given sorter.
